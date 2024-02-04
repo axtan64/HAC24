@@ -7,6 +7,7 @@ import Toolbar from './components/Toolbar'
 
 function App() {
   const flowchartRef = useRef(null);
+  const editorRef = useRef(null);
 
   return ( 
     <div className="App">
@@ -23,8 +24,8 @@ function App() {
         backgroundColor: '#000000'
       }}></div>
       <Flowchart flowchartRef={flowchartRef}></Flowchart>
-      <Toolbar flowchartRef={flowchartRef}></Toolbar>
-      <CodeEditor></CodeEditor>
+      <CodeEditor editorRef={editorRef}></CodeEditor>
+      <Toolbar flowchartRef={flowchartRef} editorRef={editorRef}></Toolbar>
     </div>
   )
 }

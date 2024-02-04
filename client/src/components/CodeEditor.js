@@ -3,16 +3,7 @@ import CodeLine from './CodeLine.js';
 
 const lineSize = 18;
 
-function CodeEditor() {
-    const [numLines, setNumLines] = useState(1);
-    let maxLines = 1;
-    let linePos = 1; // the line the user is editing
-    let lines = [];
-
-    useEffect(() => {
-
-    }, [numLines])
-
+function CodeEditor({ editorRef }) {
     return (
         <div className = "editorContainer">
             <p className="highEmphasis" style={{
@@ -21,7 +12,7 @@ function CodeEditor() {
                 fontSize: `${lineSize}px`,
                 textAlign: 'center'
             }}>Code Editor</p>
-            <div style={{width: '100%'}}>
+            <div style={{width: '100%', display: 'inline-flex'}}>
                 <table cellSpacing="0" cellPadding="0" border="0" style={{
                     paddingLeft: '16px',
                     display: 'inline-block',
@@ -32,20 +23,13 @@ function CodeEditor() {
                             <th style={{
                                 width: '16px'
                             }}></th>
-                            <th style={{
-                                width: 'calc(100%)'
-                            }}>
-
-                            </th>
                         </tr>
                         {(() => {
-                            for(let lineNum = 0; lineNum < 100; lineNum++) {
+                            let lines = [];
+                            for(let lineNum = 0; lineNum < 25; lineNum++) {
                                 lines.push(
                                     <tr className="editorrow" key={lineNum}>
                                         <td className="code_linenum">{lineNum + 1}</td>
-                                        <td>
-                                            <CodeLine></CodeLine>
-                                        </td>
                                     </tr>
                                 )
                             }
@@ -53,6 +37,7 @@ function CodeEditor() {
                         })()}
                     </tbody>
                 </table>
+                <CodeLine editorRef={editorRef}></CodeLine>
             </div>
         </div>
     )

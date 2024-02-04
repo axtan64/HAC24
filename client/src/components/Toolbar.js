@@ -1,8 +1,9 @@
 import Refresh from '../components/Refresh.js';
+import Play from '../components/Play.js';
 
 import play from '../assets/play2.png';
 
-function Toolbar({ flowchartRef }) {
+function Toolbar({ flowchartRef, editorRef }) {
     return (
         <div id="toolbar" style={{display: 'inline-block', alignItems: 'center', paddingTop: '8px'}}>
             <li style={{display: 'inline-block', alignItems: 'center'}}>
@@ -25,9 +26,7 @@ function Toolbar({ flowchartRef }) {
 
             <li style={{display: 'inline-block', position: 'absolute', right: '32px'}}>
                 <Refresh flowchartRef={flowchartRef}></Refresh>
-                <button id="play" style={{transform: "translate(0, 0)"}}>
-                    <img src={play} alt="Run button" width="24px" style={{imageRendering: 'pixelated'}}></img>
-                </button>
+                <Play editorRef={editorRef}></Play>
             </li>
         </div>
     )

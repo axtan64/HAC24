@@ -25,14 +25,13 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route('/receive_data', methods=['POST'])
 def receive_data():
     data = request.get_json()
-    button_data = data.get('button_data')
+    editorText = data.get('editorText')
+    fileName = data.get('fileName')
 
     # Perform any actions or processing based on the received data
     # For example, you can print it or use it to trigger some backend operation
 
-    print("Received data from frontend:", button_data)
-
-
+    print("Received data from frontend:", editorText)
 
     # Return a response indicating successful receipt of data
     return jsonify({"status": "success"})
@@ -47,7 +46,7 @@ def get_base64_image():
     # Assuming you have the image path available
     num = randint(0, len(images) - 1)
     path = images[num][1]
-    return jsonify({"image": encode_image_to_base64(path)})
+    return jsonify({"image": encode_image_to_base64(path), "fileName": path})
 
 if __name__ == '__main__':
     app.run(debug=True)

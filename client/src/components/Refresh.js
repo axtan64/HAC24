@@ -3,18 +3,13 @@ import refresh from '../assets/refresh-ccw.png';
 import RequestWrapper from './RequestWrapper';
 
 function Refresh({ flowchartRef }) {
-    const [b64img, setb64img] = useState("");
+    const [b64img, setb64img] = useState(`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=`);
     const [clickable, setClickable] = useState(true);
     const refreshRef = useRef(null);
 
     useEffect(() => {
-        console.log("hi");
         flowchartRef.current.setAttribute("src", `data:image/png;base64, ${b64img}`);
     }, [b64img])
-
-    useEffect(() => {
-        console.log("clickable changed");
-    }, [clickable])
 
     async function click() {
         if(!clickable) return false;
@@ -39,7 +34,7 @@ function Refresh({ flowchartRef }) {
 
     return (
         <button id="refresh" ref={refreshRef} onClick={click}>
-            <img src={b64img} alt="Refresh button" width="24px" style={{imageRendering: 'pixelated'}}></img>
+            <img src={refresh} alt="Refresh button" width="24px" style={{imageRendering: 'pixelated'}}></img>
         </button>
     )
 }

@@ -1,22 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import { lineInit } from '../helpers/lineInit.js';
 
-function CodeLine() {
-    const [tokens, setTokens] = useState(null);
-    const lineRef = useRef(null);
-
-    let numTokens = 0;
+function CodeLine({ editorRef }) {
+    /*const lineRef = useRef(null);
 
     useEffect(() => {
         lineInit(lineRef);
     }, [lineRef])
 
-    useEffect(() => {
-        
-    }, [tokens])
+    return (
+        <textarea className="codeInput" rows="25" ref={lineRef}></textarea>
+    )*/
 
     return (
-        <textarea className="codeInput" ref={lineRef}></textarea>
+        <textarea className="codeInput" rows="25" ref={editorRef}></textarea>
     )
 }
 
