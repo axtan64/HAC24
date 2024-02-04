@@ -16,7 +16,7 @@ function CodeLine() {
     }, [tokens])
 
     return (
-        <textarea className='codeLine' ref={lineRef} wrap="none"></textarea>
+        <textarea className="codeInput" ref={lineRef}>hi</textarea>
     )
 }
 
