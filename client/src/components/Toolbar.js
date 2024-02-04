@@ -1,5 +1,8 @@
+import 'axios';
+
+import Refresh from '../components/Refresh.js';
+
 import play from '../assets/play2.png';
-import refresh from '../assets/refresh-ccw.png';
 
 function Toolbar() {
     return (
@@ -23,9 +26,7 @@ function Toolbar() {
             </li>
 
             <li style={{display: 'inline-block', position: 'absolute', right: '32px'}}>
-            <button id="refresh">
-                    <img src={refresh} alt="Refresh button" width="24px" style={{imageRendering: 'pixelated'}}></img>
-                </button>
+                <Refresh></Refresh>
                 <button id="play">
                     <img src={play} alt="Run button" width="24px" style={{imageRendering: 'pixelated'}}></img>
                 </button>

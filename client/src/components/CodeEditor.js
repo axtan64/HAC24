@@ -32,12 +32,20 @@ function CodeEditor() {
                             <th style={{
                                 width: '16px'
                             }}></th>
+                            <th style={{
+                                width: 'calc(100%)'
+                            }}>
+
+                            </th>
                         </tr>
                         {(() => {
                             for(let lineNum = 0; lineNum < 100; lineNum++) {
                                 lines.push(
                                     <tr className="editorrow" key={lineNum}>
                                         <td className="code_linenum">{lineNum + 1}</td>
+                                        <td>
+                                            <CodeLine></CodeLine>
+                                        </td>
                                     </tr>
                                 )
                             }
@@ -45,7 +53,6 @@ function CodeEditor() {
                         })()}
                     </tbody>
                 </table>
-                <textarea className="codeInput"></textarea>
             </div>
         </div>
     )
