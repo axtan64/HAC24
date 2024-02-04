@@ -81,8 +81,19 @@ body {
   transform: translate(0, -10px);
 }
 
+#refresh {
+  width: 64px; 
+  height: 34px; 
+  background-color: #0066ff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  transform: translate(-4px, -10px);
+}
+
 .editorrow {
-  height: min-content
+  max-height: 19px;
+  height: 19px
 }
 
 .flowchartContainer {
@@ -118,12 +129,13 @@ body {
 }
 
 .codeInput {
-  position: fixed;
-  width: calc(100% - 64px);
-  height: 100%;
-  top: 0px;
+  position: absolute;
+  width: calc(100%);
+  height: auto;
   resize: none;
-  line-height: 18px;
+  line-height: 19px;
+  opacity: 100%;
+  overflow: hidden;
 }
 
 .code_linenum {
