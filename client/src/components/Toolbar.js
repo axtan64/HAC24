@@ -25,7 +25,7 @@ function Toolbar({ flowchartRef }) {
 
             <li style={{display: 'inline-block', position: 'absolute', right: '32px'}}>
                 <Refresh flowchartRef={flowchartRef}></Refresh>
-                <button id="play" style={{transform: "translate(0, -28.5px)"}}>
+                <button id="play" style={{transform: "translate(0, 0)"}}>
                     <img src={play} alt="Run button" width="24px" style={{imageRendering: 'pixelated'}}></img>
                 </button>
             </li>

@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
 import base64
 from random import randint
 
@@ -16,6 +17,8 @@ images = [
 
 # sending the image to front end
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 # Define route handler to receive data from the frontend

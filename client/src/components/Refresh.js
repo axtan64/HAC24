@@ -8,7 +8,8 @@ function Refresh({ flowchartRef }) {
     const refreshRef = useRef(null);
 
     useEffect(() => {
-        flowchartRef.current.setAttribute("src", b64img);
+        console.log("hi");
+        flowchartRef.current.setAttribute("src", `data:image/png;base64, ${b64img}`);
     }, [b64img])
 
     useEffect(() => {
@@ -24,9 +25,13 @@ function Refresh({ flowchartRef }) {
             if(res.status == 200) return res.data;
             return Promise.reject(res)
         })
-        .then((res) => res.data)
+        .then((res) => {
+            setClickable(true);
+            return res.image;
+        })
         .catch(() => {
             setClickable(true);
+            console.log("Refresh get_base64_image error");
         })
 
         setb64img(res);
