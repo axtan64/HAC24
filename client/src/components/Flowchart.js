@@ -1,6 +1,6 @@
 import flowchart1 from '../assets/flowcharts/flowchart1.png';
 
-function Flowchart() {
+function Flowchart({ flowchartRef }) {
     return (
         <div className="flowchartContainer">
             <p className="highEmphasis" style={{
@@ -9,7 +9,7 @@ function Flowchart() {
                 fontSize: '18px',
                 textAlign: 'center'
             }}>Flowchart</p>
-            <img src={flowchart1} alt="Flowchart 1" style={{
+            <img src={flowchart1} alt="Flowchart 1" ref={flowchartRef} style={{
                 position: 'absolute',
                 left: '50%',
                 top: '50%',

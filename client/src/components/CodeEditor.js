@@ -22,7 +22,7 @@ function CodeEditor() {
                 textAlign: 'center'
             }}>Code Editor</p>
             <div style={{width: '100%'}}>
-                <table cellspacing="0" cellpadding="0" border="0" style={{
+                <table cellSpacing="0" cellPadding="0" border="0" style={{
                     paddingLeft: '16px',
                     display: 'inline-block',
                     borderCollapse: 'collapse'

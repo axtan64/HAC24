@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import './App.css';
 
 import CodeEditor from './components/CodeEditor';
@@ -5,6 +6,8 @@ import Flowchart from './components/Flowchart';
 import Toolbar from './components/Toolbar'
 
 function App() {
+  const flowchartRef = useRef(null);
+
   return ( 
     <div className="App">
       <div style={{
@@ -19,9 +22,9 @@ function App() {
         height: '16px',
         backgroundColor: '#000000'
       }}></div>
-      <Toolbar></Toolbar>
+      <Flowchart flowchartRef={flowchartRef}></Flowchart>
+      <Toolbar flowchartRef={flowchartRef}></Toolbar>
       <CodeEditor></CodeEditor>
-      <Flowchart></Flowchart>
     </div>
   )
 }
