@@ -22,8 +22,8 @@ def convertToGraph(lis):
 
 
 def getTree(text):
-    lines = fixString("None;a=10;b=20;a<b?;b=;b-a;a=;a-b;submit b; submit a")
-    newlines = fixString("None; a=10")
+    lines = fixString("None;"+text)
+    newlines = fixString("None;"+lines[0])
     run = True
     linePointer = 1
     pointer = 1
@@ -173,13 +173,20 @@ def doInstructions(array):
             return "Variable does not exist"
 
 
+from imageReading import extract_text_from_image
+from SendAndReceive import otherPath
 
-
-#tree = getTree("a")
+tree = getTree(extract_text_from_image(otherPath))
 depthStack = []
 visited = []
-#for i in range(len(tree)):
-#    visited.append(False)
-#print(depthFistSearch(tree, "submita", int(1)))
+for i in range(len(tree)):
+    visited.append(False)
 
+for i in range(len(tree)):
+    if "end" in tree[i]:
+        goal = tree[i]
+
+instructions = depthFistSearch(tree, goal, int(1))
+#print(depthFistSearch(tree, "submita", int(1)))
+doInstructions(instructions)
 #print(doInstructions(['a=10', 'b=20', 'a<b?', 'b=b-a', 'submita']))

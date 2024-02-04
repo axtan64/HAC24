@@ -1,5 +1,6 @@
 import easyocr
 import cv2
+from SendAndReceive import otherPath
 
 def extract_text_from_image(image_path):
     # Initialize EasyOCR reader
@@ -23,13 +24,12 @@ def extract_text_from_image(image_path):
 
 
     # Save the image with text removed
-    output_image_path = "if_test4.png"
+    output_image_path = otherPath
     cv2.imwrite(output_image_path, image)
 
-    return extracted_text, output_image_path
+    return extracted_text
 
 # Example usage:
-input_image_path = "if_test4.png"
-extracted_text, output_image_path = extract_text_from_image(input_image_path)
-print("Extracted Text:", extracted_text)
-print("Output Image with Text Removed:", output_image_path)
+input_image_path = otherPath
+extracted_text= extract_text_from_image(input_image_path)
+
