@@ -4,7 +4,13 @@ from random import randint
 
 # 2D array and choice of image
 
-images = [["chart.png", "chart1.png"],["2chart.png", "2chart1.png"],["3chart.png", "3chart1.png"],["if.png", "if1.png"],["2if.png", "2if1.png"]]
+images = [
+    ["chart.png", "chart1.png"],
+    ["2chart.png", "2chart1.png"],
+    ["3chart.png", "3chart1.png"],
+    ["if.png", "if1.png"],
+    ["2if.png", "2if1.png"]
+]
 
 
 
@@ -33,11 +39,11 @@ def encode_image_to_base64(image_path):
         encoded_string = base64.b64encode(image_file.read()).decode("utf-8")
     return encoded_string
 
-@app.route('/get_base64_image()')
+@app.route('/get_base64_image')
 def get_base64_image():
     # Assuming you have the image path available
     num = randint(0, len(images) - 1)
-    path = images[num,1]
+    path = images[num][1]
     return jsonify({"image": encode_image_to_base64(path)})
 
 if __name__ == '__main__':
