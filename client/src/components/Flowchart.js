@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import flowchart1 from '../assets/flowcharts/flowchart1.png';
 
 function Flowchart({ flowchartRef }) {
@@ -15,8 +14,8 @@ function Flowchart({ flowchartRef }) {
                 left: '50%',
                 top: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: '80%',
-                height: '80%',
+                width: '70%',
+                height: '70%',
                 objectFit: 'contain'
             }}>
             </img>

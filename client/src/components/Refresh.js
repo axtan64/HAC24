@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import refresh from '../assets/refresh-ccw.png';
 import RequestWrapper from './RequestWrapper';
 
-function Refresh({ flowchartRef }) {
+function Refresh({ flowchartRef, setFileName }) {
     const [b64img, setb64img] = useState(`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=`);
     const [clickable, setClickable] = useState(true);
     const refreshRef = useRef(null);
@@ -21,6 +21,7 @@ function Refresh({ flowchartRef }) {
             return Promise.reject(res)
         })
         .then((res) => {
+            setFileName(res.fileName);
             setClickable(true);
             return res.image;
         })

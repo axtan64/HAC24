@@ -3,7 +3,7 @@ import Play from '../components/Play.js';
 
 import play from '../assets/play2.png';
 
-function Toolbar({ flowchartRef, editorRef }) {
+function Toolbar({ flowchartRef, editorRef, fileName, setFileName }) {
     return (
         <div id="toolbar" style={{display: 'inline-block', alignItems: 'center', paddingTop: '8px'}}>
             <li style={{display: 'inline-block', alignItems: 'center'}}>
@@ -25,8 +25,8 @@ function Toolbar({ flowchartRef, editorRef }) {
             </li>
 
             <li style={{display: 'inline-block', position: 'absolute', right: '32px'}}>
-                <Refresh flowchartRef={flowchartRef}></Refresh>
-                <Play editorRef={editorRef}></Play>
+                <Refresh flowchartRef={flowchartRef} setFileName={setFileName}></Refresh>
+                <Play editorRef={editorRef} fileName={fileName}></Play>
             </li>
         </div>
     )

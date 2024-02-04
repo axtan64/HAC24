@@ -188,3 +188,30 @@ button {
 button:hover {
   box-shadow: 0 0 20px #0ebac5;
 }
+
+.popup {
+  position: absolute;
+  transition: all 500ms ease;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%, 85%);
+  border-radius: 8px;
+  width: 35%;
+  height: 32px;
+  background-color: #0066ff;
+  text-align: center;
+  
+  color: #ffffff;
+  opacity: 87%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px; 
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 400; 
+  line-height: 32px;
+}
+
+.popup::before {
+  width: 0%;
+  height: 0%;
+}
